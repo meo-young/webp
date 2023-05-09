@@ -63,8 +63,9 @@ $(document).ready(function(){
     })
 
     $("#add_img").click(function(){
-        $("#note_form").show();
         $("#note_form").addClass("pop-up");
+        change_position($(".pop-up"));
+        $("#note_form").show();
     })
 
     $("#add_note").click(function(){
@@ -77,6 +78,10 @@ $(document).ready(function(){
         $("#note_form").hide();
         $("#note_form").removeClass("pop-up");
 
+    })
+
+    $(window).resize(function(){
+        change_position($(".pop-up"));
     })
 
 })
@@ -99,4 +104,13 @@ function flash(){
 function update(j){
     var i = parseInt(j.text(), 10);
     j.text(i+1);
+}
+
+function change_position(obj){
+   var l = ($(window).width()-obj.width())/2;
+   var t = ($(window).height()-obj.height())/2;
+   obj.css({
+    "top":t,
+    "left":l
+   });
 }
