@@ -48,6 +48,37 @@ $(document).ready(function(){
         }
     })
 
+    $(".main-menu").mouseover(function(){
+        $(this).css({
+            "font-size" : "20px",
+            "background-color" : "green"
+        });
+    })
+
+    $(".main-menu").mouseout(function(){
+        $(this).css({
+            "font-size" : "1em",
+            "background" : "none"
+        });
+    })
+
+    $("#add_img").click(function(){
+        $("#note_form").show();
+        $("#note_form").addClass("pop-up");
+    })
+
+    $("#add_note").click(function(){
+        var title = $("#note_title").val();
+        var date = $("#note_date").val();
+        var content = $("#note_content").val();
+        $("#note").append("제목 : "+title+"<br>");
+        $("#note").append("날짜 : "+date+"<br>");
+        $("#note").append("내용 : "+content+"<br><br>");
+        $("#note_form").hide();
+        $("#note_form").removeClass("pop-up");
+
+    })
+
 })
 
 var count = 0;
