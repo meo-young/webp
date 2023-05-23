@@ -30,6 +30,14 @@ app.use('/', function(req,res,next){
     res.end('<h1>Express 서버에서 ' + req.user + '가 응답한 결과입니다. </h1>');
 });*/
 
+app.use('/', function(req,res,next){
+    res.redirect('http://localhost:8080/source/jquery.html');
+});
+app.use('/routetest',function(req,res,next){
+    res.redirect("http://www.google.com");
+});
+
+
 app.use(express.urlencoded());
 app.use(express.json());
 
