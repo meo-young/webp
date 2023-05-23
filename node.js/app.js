@@ -10,7 +10,7 @@ var router = express.Router();
 
 //기본 속성 설정
 app.set('port',process.env.PORT || 8080);
-app.set('host', '127.0.0.1');
+app.set('host', '203.252.166.52');
 
 //static 서버 미들웨어 사용
 app.use(static(__dirname)); //현재 폴더에 대한 정적 접근 허용 __dirname -> 환경변수
@@ -31,7 +31,7 @@ app.use('/', function(req,res,next){
 });*/
 
 app.use('/', function(req,res,next){
-    res.redirect('http://localhost:8080/source/jquery.html');
+    res.redirect('/source/jquery.html');
 });
 app.use('/routetest',function(req,res,next){
     res.redirect("http://www.google.com");

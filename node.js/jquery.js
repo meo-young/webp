@@ -163,15 +163,76 @@ $(document).ready(function(){
         container.hover(stopTimer,startTimer);
     })
 
+    /* 1 번째 버전. 텍스트 파일을 가져온 후 json 객체로 변환
     $("#getText").click(function(){
         $("#textbox").text("글자 입력 테스트");
         var req = $.ajax("data.txt");
         req.done(function (data,status){
             var students = JSON.parse(data);
             for(var i =0; i<students.length; i++){
-                var str = students[i].name+"<br>";
+                var str = "<br>"+students[i].name;
                 $("#textbox").append(str);
             }
+        })
+    });
+    */
+    /* 2번째 버전. json 파일을 가져온 것을 그대로 사용.
+    $("#getText").click(function(){
+        $("#textbox").text("글자 입력 테스트");
+        var req = $.ajax("data.json");
+        req.done(function (data,status){
+            for(var i =0; i<data.length; i++){
+                var str = "<br>"+data[i].name;
+                $("#textbox").append(str);
+            }
+        })
+    });
+    */
+     //3번째 버전. txt파일의 데이터 타입을 json으로 가져옴.
+    $("#getText").click(function(){
+        $("#textbox").text("글자 입력 테스트");
+        var req = $.ajax({
+            url : "data.txt",
+            dataType : "json"
+        });
+        req.done(function (data,status){
+            for(var i =0; i<data.length; i++){
+                var str = "<br>"+data[i].name;
+                $("#textbox").append(str);
+            }
+        })
+    });
+    
+     $("#getT").click(function(){
+        var tb = $("<table/>");
+        var row = $("<tr/>").append(
+            $("<th/>").text("이름"),
+            $("<th/>").text("아이디"),
+            $("<th/>").text("학과"),
+            $("<th/>").text("수강과목")
+        );
+        tb.append(row);
+       $("#textbox").text("글자 입력 테스트");
+        var req = $.ajax({
+            url : "data.txt",
+            dataType : "json"
+        });
+        req.done(function (data,status){
+            for(var i =0; i<data.length; i++){
+                var name = data[i].name;
+                var id = data[i].id;
+                var department = data[i].department;
+                var cl = data[i].class;
+                row = $("<tr/>").append(
+                $("<td/>").text(name),
+                $("<td/>").text(id),
+                $("<td/>").text(department),
+                $("<td/>").text(cl)
+                );
+                tb.append(row);
+            }
+            $("#textbox").html(tb);
+
         })
     });
 
