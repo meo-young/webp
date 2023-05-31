@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#screen2 {
+    float: left;
+}
+
+#gamestart2 {
+    position: fixed;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#boss_UI2 {
+    float: left;
+    width: 200px;
+    height: 600px;
+}
+
+#player_UI2 {
+    float: left;
+    width: 200px;
+    height: 600px;
+}
+
+#player_state2 {
+    margin-top: 100px;
+}
+
+#boss_bar2 {
+    margin: 50px 90px;
+}
+
+#container2 {
+    width: 20px;
+    height: 300px;
+    background-color: red;
+}
+
+#skill2 {
+    margin-top: 70px;
+    margin-left: 10px;
+}
+
+#skill2 div p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#skill2 div {
+    float: left;
+}
+
+
+#skill2 img {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+#qtimer2 {
+    border: 1px solid black;
+    display: none;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+
+#wtimer2 {
+    border: 1px solid black;
+    display: none;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.character {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+#gold2 {
+    margin-top: 100px;
+}
+
+#esc_menu2 {
+    
+    display: none;
+}
+#play2 {
+    width: 179px;
+    height: 49px;
+    background: url("../img/interface/esc_play.png");
+    border: none;
+}
+#set2 {
+    width: 289px;
+    height: 43px;
+    background: url("../img/interface/settings_289x43.png");
+    border: none;
+}
+#exit2 {
+    width: 160px;
+    height: 51px;
+    background: url("../img/interface/esc_exit.png");
+    border: none;
+}
